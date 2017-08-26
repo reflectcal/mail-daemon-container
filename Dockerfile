@@ -23,9 +23,10 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 
 # Copy application
-COPY ./src/app /usr/share/mail-daemon/app/
-COPY ./src/app.js /usr/share/mail-daemon/
+COPY ./src/js /usr/share/mail-daemon/js/
 COPY ./src/logs /usr/share/mail-daemon/logs/
+COPY ./src/src /usr/share/mail-daemon/src/
+COPY ./src/templates /usr/share/mail-daemon/templates/
 COPY ./src/package.json /usr/share/mail-daemon/
 
 # Install node modules
