@@ -19,15 +19,14 @@ RUN rm -f /etc/service/sshd/down
 RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
 # Copy application
 COPY ./src/app /usr/share/mail-daemon/app/
-COPY ./src/logs /usr/share/mail-daemon/logs/
 COPY ./src/app.js /usr/share/mail-daemon/
+COPY ./src/logs /usr/share/mail-daemon/logs/
 COPY ./src/package.json /usr/share/mail-daemon/
-COPY ./src/client_secret_* /usr/share/mail-daemon/
 
 # Install node modules
 # We may need this to build native modules
