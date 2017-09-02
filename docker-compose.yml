@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mail-daemon:
+    image: 'reflectcal/mail-daemon:latest'
+    ports:
+      - '2225:22'
+    environment:
+      - CREDS_OBJECT={}
+      - DB_URL=mongo:27017
