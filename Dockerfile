@@ -3,7 +3,7 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:master
 
 # File Author / Maintainer
 MAINTAINER Alex K <alexeykcontact@gmail.com>
