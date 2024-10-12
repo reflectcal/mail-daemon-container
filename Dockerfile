@@ -3,7 +3,7 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM phusion/baseimage:master
+FROM phusion/baseimage:jammy-1.0.4
 
 # File Author / Maintainer
 MAINTAINER Alex K <alexeykcontact@gmail.com>
@@ -19,7 +19,7 @@ RUN rm -f /etc/service/sshd/down
 RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
 # Copy application
