@@ -23,6 +23,7 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
 # Copy application
+COPY ./src/js /usr/share/mail-daemon/js/
 COPY ./src/logs /usr/share/mail-daemon/logs/
 COPY ./src/src /usr/share/mail-daemon/src/
 COPY ./src/templates /usr/share/mail-daemon/templates/
